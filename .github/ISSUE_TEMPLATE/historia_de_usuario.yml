@@ -14,11 +14,11 @@ body:
     id: integrantes_grupo
     attributes:
       label: Integrantes del grupo
-      description: Lista los nombres completos y el código de cada integrante del equipo. Un nombre por línea en formato `Apellido, Nombre (código)`.
+      description: Lista los nombres completos de cada integrante del equipo. Un nombre por línea en formato `Apellido, Nombre`.
       placeholder: |
-        Pérez Gómez, Juan Carlos (20211001)
-        Ramírez López, Ana Lucía (20211002)
-        Torres Vargas, Luis Miguel (20211003)
+        Pérez Gómez, Juan Carlos
+        Ramírez López, Ana Lucía
+        Torres Vargas, Luis Miguel
     validations:
       required: true
 
