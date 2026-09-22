@@ -1,0 +1,175 @@
+name: Historia de Usuario
+description: Plantilla para registrar Historias de Usuario del curso Introducción a los Sistemas de Información.
+title: "[HU-XX]: "
+labels:
+  - user-story
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Historia de Usuario
+        Completa cada sección siguiendo el formato **Como / Quiero / Para**.
+
+  - type: input
+    id: hu_id
+    attributes:
+      label: Identificador de la HU
+      description: Número correlativo de la historia (ej. HU-01).
+      placeholder: HU-01
+    validations:
+      required: true
+
+  - type: input
+    id: titulo_corto
+    attributes:
+      label: Título corto
+      description: Resumen de la HU en una línea.
+      placeholder: "Registro de nuevos pacientes"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rol
+    attributes:
+      label: Rol (Como)
+      description: Usuario o actor que se beneficia.
+      options:
+        - Paciente
+        - Médico
+        - Enfermero
+        - Farmacéutico
+        - Administrador del hospital
+        - Recepcionista
+        - Otro personal de salud
+        - Cliente / usuario final
+    validations:
+      required: true
+
+  - type: dropdown
+    id: sistema
+    attributes:
+      label: Sistema o módulo
+      description: Componente del SI donde aplica la historia.
+      options:
+        - Sistema de citas
+        - Historia clínica electrónica
+        - Sistema de recetas
+        - Sistema de farmacia
+        - Sistema de admisión
+        - Sistema de pagos
+        - Portal del paciente
+        - Otro
+    validations:
+      required: true
+
+  - type: textarea
+    id: descripcion_quiero
+    attributes:
+      label: Quiero (acción / funcionalidad)
+      description: Qué necesita poder hacer el rol seleccionado.
+      placeholder: "Quiero registrar un nuevo paciente llenando un formulario con sus datos personales y antecedentes médicos."
+    validations:
+      required: true
+
+  - type: textarea
+    id: beneficio_para
+    attributes:
+      label: Para (beneficio / valor de negocio)
+      description: Qué problema de la organización o del usuario resuelve.
+      placeholder: "Para que el sistema tenga un registro actualizado y el médico pueda acceder a la historia clínica desde la primera consulta."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: criterios_aceptacion
+    attributes:
+      label: Criterios de aceptación
+      description: Marca todas las condiciones que debe cumplir la HU para ser aceptada.
+      options:
+        - label: El formulario valida campos obligatorios (no se guarda si faltan datos críticos).
+          required: false
+        - label: El sistema muestra mensajes claros de éxito o error.
+          required: false
+        - label: La información queda disponible para otros roles del sistema (ej. médico ve la cita agendada).
+          required: false
+        - label: La HU cubre el caso de error o dato inválido (no solo el camino feliz).
+          required: false
+        - label: La HU es testeable (se puede verificar en una demo o con un usuario).
+          required: false
+
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad (MoSCoW)
+      options:
+        - Must have
+        - Should have
+        - Could have
+        - Won't have (esta vez)
+    validations:
+      required: true
+
+  - type: input
+    id: estimacion
+    attributes:
+      label: Estimación
+      description: Tamaño relativo (S, M, L) o puntos de historia.
+      placeholder: M
+    validations:
+      required: false
+
+  - type: dropdown
+    id: sprint
+    attributes:
+      label: Sprint sugerido
+      options:
+        - Sprint 1
+        - Sprint 2
+        - Sprint 3
+        - Sprint 4
+        - Backlog (sin sprint asignado)
+    validations:
+      required: false
+
+  - type: input
+    id: dependencia
+    attributes:
+      label: Dependencias
+      description: HU(s) de la que depende, separadas por coma.
+      placeholder: HU-03, HU-07
+    validations:
+      required: false
+
+  - type: upload
+    id: prototipo
+    attributes:
+      label: Prototipo o mockup (Excalidraw / imagen)
+      description: Arrastra una imagen (PNG, JPG, SVG) del prototipo en Excalidraw. Máximo 10 MB.
+    validations:
+      required: false
+
+  - type: upload
+    id: captura_contexto
+    attributes:
+      label: Captura del contexto actual
+      description: Foto o captura que muestre el problema o la situación actual.
+    validations:
+      required: false
+
+  - type: textarea
+    id: notas
+    attributes:
+      label: Notas adicionales
+      description: Supuestos, dependencias externas, links relevantes, etc.
+      placeholder: "Requiere integración con el módulo de citas..."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        Al enviar esta Issue:
+        - La etiqueta **user-story** se aplica automáticamente.
+        - Asigna la Issue a un miembro del equipo durante el Sprint Planning.
+        - Vincula la HU al Milestone correspondiente.
