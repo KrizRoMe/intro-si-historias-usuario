@@ -28,22 +28,32 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
-    id: criterios_aceptacion
+  - type: textarea
+    id: criterio_1
     attributes:
-      label: Criterios de aceptación
-      description: Marca todas las condiciones que debe cumplir esta historia para ser aceptada.
-      options:
-        - label: "El sistema debe validar que el correo tenga un formato válido."
-          required: false
-        - label: "Si la contraseña es incorrecta, debe mostrar un mensaje de error claro."
-          required: false
-        - label: 'Debe incluir un botón/enlace de "¿Olvidaste tu contraseña?".'
-          required: false
-        - label: "Al autenticarse con éxito, debe redirigir al usuario al panel principal."
-          required: false
-        - label: "La sesión debe expirar tras un período de inactividad."
-          required: false
+      label: Criterio de aceptación 1
+      description: Describe una condición medible que debe cumplirse para aceptar esta historia.
+      placeholder: "El sistema debe validar que el correo tenga un formato válido."
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterio_2
+    attributes:
+      label: Criterio de aceptación 2
+      description: Segunda condición medible que debe cumplirse.
+      placeholder: 'Si la contraseña es incorrecta, debe mostrar un mensaje de error claro y un enlace de "¿Olvidaste tu contraseña?".'
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterio_3
+    attributes:
+      label: Criterio de aceptación 3
+      description: Tercera condición medible que debe cumplirse.
+      placeholder: "Al autenticarse con éxito, debe redirigir al usuario al panel principal y mantener la sesión activa hasta el cierre explícito."
+    validations:
+      required: true
 
   - type: upload
     id: prototipo
